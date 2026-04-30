@@ -1,10 +1,13 @@
+import AppHeader from "./components/AppHeader"
+import AppMain from "./components/AppMain"
 
 function App() {
 
 
   return (
     <>
-      <h1>Hello World</h1>
+      <AppHeader />
+      <AppMain />
     </>
   )
 }
