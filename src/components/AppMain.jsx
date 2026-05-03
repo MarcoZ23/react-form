@@ -12,12 +12,18 @@ export default function AppMain() {
         setArticles(addArticle)
         setNewArticle('')
     }
+    function removeArticle(i) {
+        const filteredArticle = articles.filter((article, index) => index !== i)
+        setArticles(filteredArticle)
+    }
     return (
         <>
             <div className="card">
                 <div className="list-group list-group-flush fw-bold">
                     {articles.map((article, i) =>
-                        <a href='#' key={i} className="list-group-item bg-primary-subtle border border-black">{article}</a>
+                        <a href='#' key={i} className="list-group-item bg-primary-subtle border border-black d-flex justify-content-between">{article}
+                            <i className='bi bi-trash-fill' onClick={() => removeArticle(i)}></i>
+                        </a>
                     )}
                 </div>
             </div>
